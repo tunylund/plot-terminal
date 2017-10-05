@@ -44,4 +44,18 @@ describe('graph', function () {
         '*')
   })
 
+  it('should plot more graphs', () => {
+    assertStr(graph([
+      { x: 1, y: 0 },
+      { x: 10, y: 0 },
+      { x: 50, y: 0 },
+      { x: 100, y: 0 },
+      { x: 200, y: 0 }]),
+      '\n' +
+      '\n' +
+      '\n' +
+      '\n' +
+      '*   *    *          *')
+  })
+
 })

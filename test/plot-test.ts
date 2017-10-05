@@ -31,7 +31,7 @@ describe('plot', function () {
    '   0    1    ')
   })
 
-  it('should plot a large chart', () => {
+  it.only('should plot a large chart', () => {
     assertStr(plot([
       {x: 1 / 5, y: 5},
       {x: 1, y: 3},
@@ -43,9 +43,9 @@ describe('plot', function () {
     '   |                        \n' +
     ' 5 *                        \n' +
     ' 4 |                        \n' +
-    ' 3 |  *                     \n' +
-    ' 2 |       *                \n' +
-    ' 1 `----^----^--*-^--*-^----\n' +
+    ' 3 |   *                    \n' +
+    ' 2 |        *               \n' +
+    ' 1 `----^----^---*^---*^----\n' +
     '   0.2  1.2  2.2  3.2  4.2  '
     )
   })
