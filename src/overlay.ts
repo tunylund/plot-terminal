@@ -41,12 +41,12 @@ function union (a: string[], b: string[]): string[] {
 }
 
 export default function overlay (a: string, b: string, offsetX = 0, offsetY = 0): string {
-  const squarePaddedA = bottomPad(leftPad(makeSquareH(a, maxX(a)), offsetX < 0 ? -offsetX : 0), offsetY < 0 ? -offsetY : 0)
-  const squarePaddedB = bottomPad(leftPad(makeSquareH(b, maxX(b)), offsetX > 0 ? offsetX : 0), offsetY > 0 ? offsetY : 0)
-  const xLength = Math.max(maxX(squarePaddedA), maxX(squarePaddedB))
-  const yLength = Math.max(rows(squarePaddedA).length, rows(squarePaddedB).length)
-  const sameSizedA = makeSquareV(makeSquareH(squarePaddedA, xLength), yLength)
-  const sameSizedB = makeSquareV(makeSquareH(squarePaddedB, xLength), yLength)
+  const evenWidthA = bottomPad(leftPad(makeSquareH(a, maxX(a)), offsetX < 0 ? -offsetX : 0), offsetY < 0 ? -offsetY : 0)
+  const evenWidthB = bottomPad(leftPad(makeSquareH(b, maxX(b)), offsetX > 0 ? offsetX : 0), offsetY > 0 ? offsetY : 0)
+  const xLength = Math.max(maxX(evenWidthA), maxX(evenWidthB))
+  const yLength = Math.max(rows(evenWidthA).length, rows(evenWidthB).length)
+  const sameSizedA = makeSquareV(makeSquareH(evenWidthA, xLength), yLength)
+  const sameSizedB = makeSquareV(makeSquareH(evenWidthB, xLength), yLength)
   const ac = chars(sameSizedA)
   const bc = chars(sameSizedB)
 

@@ -12,10 +12,10 @@ export default function plot (points: Point[], title?: string): string {
   const y = yAxis(points)
   const x = xAxis(points)
   const values = graph(points)
-  const leftPad = y.split('\n').reduce((memo, line) => line.includes('|') ? line.indexOf('|') : memo, 0)
-  const bottomPad = x === '' ? 0 : (x.split('\n').length - 1) * -1
-  const paddedTitle = title ? title.padStart(title.length + leftPad) + '\n' : ''
-  const base = overlay(y, x, leftPad, bottomPad)
-  const result = overlay(base, values, leftPad, -bottomPad)
+  const yWidth = y.split('\n').reduce((memo, line) => line.includes('|') ? line.indexOf('|') : memo, 0)
+  const xHeight = x === '' ? 0 : x.split('/n').length
+  const paddedTitle = title ? title.padStart(title.length + yWidth) + '\n' : ''
+  const base = overlay(y, x, yWidth, -xHeight)
+  const result = overlay(base, values, yWidth, xHeight)
   return points.length === 0 ? '' : paddedTitle + result
 }
