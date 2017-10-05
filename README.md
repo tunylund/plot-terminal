@@ -1,29 +1,21 @@
-# mini-benchmark
-Minimal benchmark library for nodejs 8.5+. Uses the native performance api.
+# Plot terminal
+A small plotting library to make ascii graphs on the terminal environment.
 
 ## Usage
 ```
-import { miniBenchmark as mb, formatResult} from 'mini-benchmark'
+import plot from 'plot-terminal'
 
-mb([], test => {
-  test('some-test', () => {
-    // do something long
-  })
-}).map(formatResult)
-  .map(x => console.log(x))
-// => 10.00 some-test
-```
+console.log(plot([
+  {x: 0, y: 2},
+  {x: 1, y: 1},
+  {x: 2, y: 0}
+  ], 'plot-this'))
 
-```
-import { miniBenchmark as mb, formatResult} from 'mini-benchmark'
-
-const previousTestResults = [{ name: 'some-test', duration: 100 }]
-
-mb(previousTestResults, test => {
-  test('some-test', () => {
-    // do something long
-  })
-}).map(formatResult)
-  .map(x => console.log(x))
-// => 10.00 some-test -90.00 (-90%) improvement
+// =>
+//   plot-this
+//   |
+// 2 *
+// 1 |    *
+// 0 `----^----*----
+//
 ```

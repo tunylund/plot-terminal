@@ -1,11 +1,11 @@
 {
-  "name": "plot",
+  "name": "plot-terminal",
   "version": "0.0.1",
   "description": "small plotting lib for console usage",
   "main": "lib/src/plot.js",
   "types": "lib/src/plot.d.ts",
-  "repository": "git@github.com:tunylund/plot.git",
-  "bugs": "https://github.com/tunylund/plot/issues",
+  "repository": "git@github.com:tunylund/plot-terminal.git",
+  "bugs": "https://github.com/tunylund/plot-terminal/issues",
   "engines": {
     "node": ">=8.5.0"
   },
